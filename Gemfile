@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
@@ -30,6 +31,17 @@ gem 'jbuilder', '~> 1.2'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :development, :test do
+  # Use RSpec for testing 
+  gem 'rspec-rails'
+end
+
+group :test do
+  # Both used with RSpec for English-like test syntax
+  gem 'selenium-webdriver'
+  gem 'capybara'
 end
 
 # Use ActiveModel has_secure_password

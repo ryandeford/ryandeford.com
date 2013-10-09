@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-RyandefordCom::Application.config.secret_key_base = 'c37ca0628fff1a4f5abb4f004421ae8eedffe778dcfd370b12ad74928ea3fb6f83383fdce6bd41cce4d1daae24623c4c83778cb8ad017715efa29a40420f38f5'
+
+require 'securerandom'
+
+def secret_token
+  token_file = Rails.root.join('.secret');
+
+  if File.exist?(token_file)
+    return File.read(token_file).chomp;
+  else
+    token = SecureRandom.hex(64);
+    File.write(token_file, token);
+    return token;
+  end
+end
+
+RyandefordCom::Application.config.secret_key_base = secret_token();
