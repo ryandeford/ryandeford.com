@@ -10,6 +10,7 @@
  *
  *= require bootstrap
  *= require bootstrap-theme
+ *= require ryandeford
  *= require_self
  *= require_tree .
  */

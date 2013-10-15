@@ -1,0 +1,91 @@
+/* custom styles for ryandeford.com */
+
+$header-bg-color: #081321;
+$header-title-color: #ffdc00;
+$header-padding: 10px;
+
+$navbar-border-color: #000;
+$navbar-border-width: 4px;
+
+$content-bg-color: #e0e0de;
+$content-padding: 20px;
+
+$footer-text-color: #fff;
+$footer-height: 50px;
+$footer-padding: $footer-height * .1;
+
+/********************************************
+ apply styles to html, body, and body wrapper
+*********************************************/
+
+html,
+body {
+  height: 100%;
+  width: auto;
+}
+
+#wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto (-($footer-height + $footer-padding));
+  background-color: $content-bg-color; 
+  padding-bottom: $footer-height + $footer-padding;
+}
+
+/********************************
+ apply styles to main site header
+*********************************/
+
+#main-header {
+  background-color: $header-bg-color;
+  padding: $header-padding;
+}
+
+#main-header img {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+#main-header h1 {
+  display: inline-block;
+  color: $header-title-color;
+  cursor: default;
+}
+
+/************************************
+ apply styles to main site navigation
+*************************************/
+
+#main-navbar {
+  border-top: $navbar-border-width solid $navbar-border-color;
+  border-bottom: $navbar-border-width solid $navbar-border-color;
+}
+
+/* overrides bootstrap - this keeps the collapsed navigation button from floating right */
+.navbar-toggle {
+  float: none;
+}
+
+/*********************************
+ apply styles to main site content
+**********************************/
+
+#main-content {
+  padding-left: $content-padding;
+  padding-right: $content-padding;
+}
+
+/*******************************
+apply styles to main site footer
+********************************/
+
+#main-footer {
+  height: $footer-height;
+  background-color: $header-bg-color;
+  padding-top: $footer-padding;
+  text-align: center;
+  color: $footer-text-color;
+}
